@@ -15,7 +15,7 @@ def add_time(given, inp, day=None):
     gmin = int(gmin)
     imin = int(imin)
     if imin > 59:
-        return print("exceed max minutes")
+        return "exceed max minutes"
     anmin = gmin + imin
     adhour = int()
     while anmin >= 60:
@@ -51,19 +51,21 @@ def add_time(given, inp, day=None):
     if carlito == 1:
         carl = "(next day)"
     elif carlito > 1:
-        carl = ("(" + str(carlito) + " days later)")
+        carl = f"({carlito} days later)"
     else:
         carl = ""
 
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     if day is None:
-        print(str(anhour) + ":" + str(f"{anmin:02d}") + " " + midday + " " + carl)
+        result = f"{anhour}:{anmin:02d} {midday} {carl}"
     elif day in days:
         x = days.index(day)
         z = x + y
         while z > 6:
             z = z - 7
-        print(str(anhour) + ":" + str(f"{anmin:02d}") + " " + midday + ", " + str(days[z]) + " " + carl)
+        result = f"{anhour}:{anmin:02d} {midday}, {days[z]} {carl}"
+
+    return print(result)
 
 
 add_time("3:00 PM", "3:10")
