@@ -66,11 +66,3 @@ def add_time(given, inp, day=None):
         result = f"{anhour}:{anmin:02d} {midday}, {days[z]} {carl}"
 
     return print(result)
-
-
-add_time("3:00 PM", "3:10")
-add_time("11:30 AM", "2:32", "Monday")
-add_time("11:43 AM", "00:20")
-add_time("10:10 PM", "3:30")
-add_time("11:43 PM", "24:20", "Tuesday")
-add_time("6:30 PM", "205:12")
